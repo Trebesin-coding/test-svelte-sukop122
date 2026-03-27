@@ -1,18 +1,27 @@
 <script>
-// Až vytvoříš komponent, nezapomeň jej importovat
+import Button from "../components/Button.svelte";
+import { shared } from "$lib/shared.svelte";
+import Heading from "../components/Heading.svelte";
+import Buttone from "../components/Buttone.svelte";
 // Emoji se vytváří pomocí windows + . nebo je můžeš zkopírovat odsud 🙂 😢
 </script>
 
 <div class="headings">
-    <!-- Sem patří komponenty s nadpisy -->
+{#if (shared.score >= 5)}
+    <Heading/>
+    <Heading/>
+    <Heading/>
+{/if}
 </div>
 
 <div class="container">
-    <p>Zde se bude zobrazovat počet kliknutí</p> 
+    <p>{shared.score}</p> 
     <div class="buttons">
-        <!-- Sem patří tlačítka -->
+       <Button/>
+       <Buttone/>
     </div>
 </div>
+
 
 
 
